@@ -3,11 +3,11 @@ import Foundation
 // Base class representing a generic bird
 class Bird {
     var name: String
-    
+
     init(name: String) {
         self.name = name
     }
-    
+
     // Method to make the bird fly
     // LSP Violation: The base class assumes that all birds can fly,
     // but this is not true for all bird species (e.g., penguins).

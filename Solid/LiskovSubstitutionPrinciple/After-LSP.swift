@@ -13,11 +13,11 @@ protocol Flyable {
 // Sparrow class conforming to Bird and Flyable
 class Sparrow: Bird, Flyable {
     var name: String
-    
+
     init(name: String) {
         self.name = name
     }
-    
+
     // Sparrow can fly, so the fly method is implemented here
     func fly() -> String {
         return "\(name) is flying."
@@ -27,11 +27,11 @@ class Sparrow: Bird, Flyable {
 // Penguin class conforming only to Bird
 class Penguin: Bird {
     var name: String
-    
+
     init(name: String) {
         self.name = name
     }
-    
+
     // Penguins do not conform to Flyable, so they don't implement fly().
     // This design naturally reflects the real-world behavior of penguins.
 }

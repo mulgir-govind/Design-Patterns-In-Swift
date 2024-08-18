@@ -10,13 +10,13 @@ In `Before-LSP.swift`, the `Bird` class is designed to represent any bird, with 
 
 ## After-LSP.swift
 To adhere to the Liskov Substitution Principle, `After-LSP.swift` refactors the design:
-- `Bird` is now a protocol, and `FlyingBird` is a protocol that extends `Bird` with a `fly()` method.
-- `Sparrow` conforms to `FlyingBird`, as it can fly.
+- `Bird` is now a protocol, and `Flyable` is a protocol with a `fly()` method.
+- `Sparrow` conforms to `Bird` and `Flyable`, indicating it a bird which can fly.
 - `Penguin` conforms only to `Bird`, as it does not have the ability to fly.
 
-This design ensures that any bird that can fly will conform to `FlyingBird`, and any function expecting a flying bird can safely assume that the bird can indeed fly.
+This design ensures that any bird that can fly will conform to `Flyable`, and any function expecting a flying bird can safely assume that the bird can indeed fly.
 
 ## Overview of Changes
-- Introduced a `Bird` protocol for common bird behaviors and a `FlyingBird` protocol for birds that can fly.
-- `Sparrow` conforms to `FlyingBird`, ensuring that it can be treated as a flying bird.
+- Introduced a `Bird` protocol for common bird behaviors and a `Flyable` protocol for birds that can fly.
+- `Sparrow` conforms to `Bird` & `Flyable` protocols, ensuring that it can be treated as a flying bird.
 - `Penguin` conforms only to `Bird`, avoiding the incorrect assumption that it can fly.
